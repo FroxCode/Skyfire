@@ -1,2 +1,2 @@
-# Invertigo
-A simple game by Dale Sinnott
+# Skyfire
+A game framework by Dale Sinnott
