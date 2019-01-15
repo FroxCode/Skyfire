@@ -70,9 +70,8 @@ void Game::musicAction()
 				static_cast<MusicComponent*>(testEntity.getComponents().at(i))->getMusic()->play();
 				break;
 			case false:
-				static_cast<MusicComponent*>(testEntity.getComponents().at(i))->getMusic()->pause();
-				break;
 			default:
+				static_cast<MusicComponent*>(testEntity.getComponents().at(i))->getMusic()->pause();
 				break;
 			}
 		}
