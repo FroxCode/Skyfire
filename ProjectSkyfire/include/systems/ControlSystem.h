@@ -20,7 +20,7 @@
 class ControlSystem : public System
 {
 public:
-	void update();
+	void update(sf::Event e);
 
 };
 #endif;

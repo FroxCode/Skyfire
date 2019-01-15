@@ -66,6 +66,14 @@ private:
 	sf::Vector2i const highRes = sf::Vector2i(1920, 1080);
 	sf::Vector2i defaultResolution = medRes;
 
+	sf::Clock FPS_clock;
+	/*double FPS_previous = 0;
+	double FPS_lag = 0.0;*/
+	/*double FPS_current = 0;
+	double FPS_elapsed = 0;*/
+	double const MS_PER_UPDATE = 1000.0 / 60.0;
+
+
 	Entity testEntity;
 	bool playMusic = false;
 	bool playSound = false;
@@ -74,9 +82,8 @@ private:
 	////////////////////////////////////////////////////////////
 	void initialize();
 	void update();
-	void fixedUpdate();
+	void fixedUpdate(sf::Event e);
 	void render();
-	void musicAction();
 
 };
 #endif;

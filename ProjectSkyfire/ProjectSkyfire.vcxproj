@@ -148,7 +148,6 @@
     <ClCompile Include="src\systems\PhysicsSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
     <ClCompile Include="src\systems\SceneManager.cpp" />
-    <ClCompile Include="src\systems\SoundSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\components\BoxColliderComponent.h" />
@@ -174,7 +173,6 @@
     <ClInclude Include="include\systems\ParticleSystem.h" />
     <ClInclude Include="include\systems\PhysicsSystem.h" />
     <ClInclude Include="include\systems\RenderSystem.h" />
-    <ClInclude Include="include\systems\SoundSystem.h" />
     <ClInclude Include="include\systems\System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

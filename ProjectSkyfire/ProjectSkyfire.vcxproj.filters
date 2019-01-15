@@ -54,9 +54,6 @@
     <ClCompile Include="src\systems\SceneManager.cpp">
       <Filter>Source Files\systems</Filter>
     </ClCompile>
-    <ClCompile Include="src\systems\SoundSystem.cpp">
-      <Filter>Source Files\systems</Filter>
-    </ClCompile>
     <ClCompile Include="src\scenes\GameScene.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
@@ -120,9 +117,6 @@
       <Filter>Header Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="include\systems\RenderSystem.h">
-      <Filter>Header Files\systems</Filter>
-    </ClInclude>
-    <ClInclude Include="include\systems\SoundSystem.h">
       <Filter>Header Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="include\Entity.h">
