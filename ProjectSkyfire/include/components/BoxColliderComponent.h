@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 //
-// BoxColliderComponent.h (Circle collider)
+// BoxColliderComponent.h (Basic rect collider)
 // Created by Dale Sinnott
 // 10/01/2019
 //
@@ -23,7 +23,8 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	BoxColliderComponent() : Component("BoxColliderComponent") {}
+	BoxColliderComponent() : Component("BoxColliderComponent"),
+		m_collision(false){}
 
 	////////////////////////////////////////////////////////////
 	/// Destructor (for overriding virtual function in abstract 
@@ -37,11 +38,14 @@ public:
 	sf::FloatRect getBox() { return m_box; }
 	void setBox(sf::FloatRect box) { m_box = box; }
 
+	bool isColliding() { return m_collision; }
+
 private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables
 	////////////////////////////////////////////////////////////
 	sf::FloatRect m_box;
+	bool m_collision;
 
 };
 #endif;

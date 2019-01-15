@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 //
-// GravityComponent.h (Just some small bits)
+// GravityComponent.h (Just gravity)
 // Created by Dale Sinnott
 // 10/01/2019
 //
@@ -37,7 +37,7 @@ public:
 	sf::Vector2f getGravityAsVec() { return sf::Vector2f(0.f, m_gravity); }
 	float getGravity() { return m_gravity; }
 	void setGravity(float gravity) { m_gravity = gravity; }
-	void reset() { m_gravity = GRAVITY; }
+	void resetGravity() { m_gravity = GRAVITY; }
 private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables

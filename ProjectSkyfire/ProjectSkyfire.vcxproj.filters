@@ -28,18 +28,6 @@
     <Filter Include="Header Files\scenes">
       <UniqueIdentifier>{24719464-c14c-446a-b373-ff0730aa2e0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\assets">
-      <UniqueIdentifier>{e8986e99-5b5c-4736-a63c-ecb8c6087695}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\assets\fonts">
-      <UniqueIdentifier>{41703c52-e767-4c5b-bfab-2fec602333c3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\assets\sounds">
-      <UniqueIdentifier>{9259d472-ade9-4384-a41f-08ee91f36355}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\assets\sprites">
-      <UniqueIdentifier>{f409be1f-857b-41fd-a543-1f716ba0ce4b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Game.cpp">
@@ -152,25 +140,5 @@
     <ClInclude Include="include\components\MusicComponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="assets\fonts\big_noodle_titling.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
-    <Font Include="assets\fonts\big_noodle_titling_oblique.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
-    <Font Include="assets\fonts\default.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
-    <Font Include="assets\fonts\OpenSans-Bold.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
-    <Font Include="assets\fonts\OpenSans-ExtraBoldItalic.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
-    <Font Include="assets\fonts\VCR.ttf">
-      <Filter>Resource Files\assets\fonts</Filter>
-    </Font>
   </ItemGroup>
 </Project>

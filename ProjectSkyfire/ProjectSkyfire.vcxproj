@@ -177,14 +177,6 @@
     <ClInclude Include="include\systems\SoundSystem.h" />
     <ClInclude Include="include\systems\System.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Font Include="assets\fonts\big_noodle_titling.ttf" />
-    <Font Include="assets\fonts\big_noodle_titling_oblique.ttf" />
-    <Font Include="assets\fonts\default.ttf" />
-    <Font Include="assets\fonts\OpenSans-Bold.ttf" />
-    <Font Include="assets\fonts\OpenSans-ExtraBoldItalic.ttf" />
-    <Font Include="assets\fonts\VCR.ttf" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -67,7 +67,7 @@ private:
 	sf::Vector2i defaultResolution = medRes;
 
 	Entity testEntity;
-	bool playMusic = true;
+	bool playMusic = false;
 	bool playSound = false;
 	////////////////////////////////////////////////////////////
 	/// Member functions

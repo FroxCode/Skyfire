@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 //
-// SoundComponent.h (Basic sound fx/music container)
+// SoundComponent.h (Basic sound fx container)
 // Created by Dale Sinnott
 // 10/01/2019
 //

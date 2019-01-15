@@ -21,7 +21,8 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	CircleColliderComponent() : Component("CircleColliderComponent") {}
+	CircleColliderComponent() : Component("CircleColliderComponent"),
+	m_radius(0), m_collision(false){}
 
 	////////////////////////////////////////////////////////////
 	/// Destructor (for overriding virtual function in abstract 
@@ -35,12 +36,14 @@ public:
 	float getRadius() { return m_radius; }
 	void setRadius(float radius) { m_radius = radius; }
 
+	bool isColliding() { return m_collision; }
+
 private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables
 	////////////////////////////////////////////////////////////
 	float m_radius;
-
+	bool m_collision;
 
 };
 #endif;

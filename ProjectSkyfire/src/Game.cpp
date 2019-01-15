@@ -41,12 +41,6 @@ void Game::run()
 				case sf::Keyboard::Escape:
 					isRunning = false;
 					break;
-				case sf::Keyboard::Space:
-					playSound = true;
-					break;
-				case sf::Keyboard::Enter:
-					musicAction();
-					break;
 				default:
 					break;
 				}
@@ -58,33 +52,11 @@ void Game::run()
 	}
 	std::cout << "Closing...";
 }
-void Game::musicAction()
-{
-	playMusic = !playMusic;
-	for (int i = 0; i < testEntity.getComponents().size(); i++)
-	{
-		if (testEntity.getComponents().at(i)->getName() == "MusicComponent") {
-			switch (playMusic)
-			{
-			case true:
-				static_cast<MusicComponent*>(testEntity.getComponents().at(i))->getMusic()->play();
-				break;
-			case false:
-			default:
-				static_cast<MusicComponent*>(testEntity.getComponents().at(i))->getMusic()->pause();
-				break;
-			}
-		}
-	}
-}
 void Game::initialize()
 {
 	std::cout << "initializing" << std::endl;
-	testEntity.addComponent(new SoundComponent());
-
-	testEntity.addComponent(new MusicComponent());
-	//testEntity.addComponent(new SpriteComponent("assets/sprites/test.png"));
-	/*for (int i = 0; i < testEntity.getComponents().size(); i++)
+	testEntity.addComponent(new SpriteComponent("assets/sprites/test.png"));
+	for (int i = 0; i < testEntity.getComponents().size(); i++)
 	{
 		if (testEntity.getComponents().at(i)->getName() == "SpriteComponent")
 		{
@@ -94,31 +66,20 @@ void Game::initialize()
 			);
 			static_cast<SpriteComponent*>(testEntity.getComponents().at(i))->getSprite()->setPosition(200, 200);
 		}
-	}*/
+	}
 
 }
 void Game::update()
 {
-	if (playSound)
-	{
-		playSound = false;	
-		for (int i = 0; i < testEntity.getComponents().size(); i++)
-		{
-			if (testEntity.getComponents().at(i)->getName() == "SoundComponent") {
-				static_cast<SoundComponent*>(testEntity.getComponents().at(i))->getSound()->play();
-			}
-		}
 
-	}
-
-	/*for (int i = 0; i < testEntity.getComponents().size(); i++)
+	for (int i = 0; i < testEntity.getComponents().size(); i++)
 	{
 		if (testEntity.getComponents().at(i)->getName() == "SpriteComponent")
 		{
 			static_cast<SpriteComponent*>(testEntity.getComponents().at(i))->getSprite()->setRotation(
 				static_cast<SpriteComponent*>(testEntity.getComponents().at(i))->getSprite()->getRotation() + 1);
 		}
-	}*/
+	}
 
 	//std::cout << "updating" << std::endl;
 }
@@ -129,13 +90,13 @@ void Game::fixedUpdate()
 void Game::render()
 {
 	window->clear();
-	/*for (int i = 0; i < testEntity.getComponents().size(); i++)
+	for (int i = 0; i < testEntity.getComponents().size(); i++)
 	{
 		if (testEntity.getComponents().at(i)->getName() == "SpriteComponent")
 		{
 			window->draw(*static_cast<SpriteComponent*>(testEntity.getComponents().at(i))->getSprite());
 		}
-	}*/
+	}
 	window->display();
 	//std::cout << "rendering" << std::endl;
 }
