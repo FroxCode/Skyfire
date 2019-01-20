@@ -20,7 +20,7 @@
 class ParticleSystem : public System
 {
 public:
-	void update(sf::Event e);
+	void update();
 
 };
 #endif;
