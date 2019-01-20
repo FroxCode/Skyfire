@@ -8,7 +8,7 @@
 #include "Game.h"
 Game::Game()
 {
-	window = std::make_shared<sf::RenderWindow>(sf::VideoMode(1280, 720), "DankJeWel");
+	window = std::make_shared<sf::RenderWindow>(sf::VideoMode(1280, 720), "ProjectSkyfire");
 	window->setSize(sf::Vector2u(defaultResolution));
 	window->clear();
 	window->display();
@@ -19,20 +19,21 @@ Game::~Game()
 
 }
 
-///TODO: Framelock
+///Game loop
 void Game::run()
 {
 	initialize();
 	
 	sf::Event event;
-	//double FPS_previous = 0.0;// = double(FPS_clock.restart().asMilliseconds());
-	//double FPS_lag = 0.0;
+	sf::Int32 FPS_previous = FPS_clock.getElapsedTime().asMilliseconds();
+	FPS_clock.restart();
+	sf::Int32 FPS_lag = 0;
 	while (isRunning)
 	{
-		/*double FPS_current = double(FPS_clock.restart().asMilliseconds());
-		double FPS_elapsed = FPS_current - FPS_previous;
+		sf::Int32 FPS_current = FPS_clock.getElapsedTime().asMilliseconds();
+		sf::Int32 FPS_elapsed = FPS_current - FPS_previous;
 		FPS_previous = FPS_current;
-		FPS_lag += FPS_elapsed;*/
+		FPS_lag += FPS_elapsed;
 		while (window->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -44,20 +45,19 @@ void Game::run()
 				switch (event.key.code)
 				{
 				case sf::Keyboard::Escape:
-					isRunning = true;
+					isRunning = false;
 					break;
 				default:
 					break;
 				}
 			}
 		}
-		//std::cout << "Lag: " + std::to_string(FPS_lag) + " :::: MS per update: " + std::to_string(MS_PER_UPDATE) << std::endl;
 
-		//while(FPS_lag >= MS_PER_UPDATE)
-		//{
-		//	fixedUpdate(event);
-		//	FPS_lag -= MS_PER_UPDATE;
-		//}
+		while(FPS_lag >= MS_PER_UPDATE)
+		{
+			fixedUpdate(event);
+			FPS_lag -= MS_PER_UPDATE;
+		}
 		render();
 	}
 	std::cout << "Closing...";
@@ -65,25 +65,23 @@ void Game::run()
 void Game::initialize()
 {
 	
-	//std::cout << "initializing" << std::endl;
+	std::cout << "initializing" << std::endl;
 }
 void Game::update()
 {
 
-	//std::cout << "updating" << std::endl;
+	std::cout << "updating" << std::endl;
 }
 void Game::fixedUpdate(sf::Event e)
 {
 
-	std::cout << "-";
-	//std::cout << "updating (fixed)" << std::endl;
+	std::cout << "updating (fixed)" << std::endl;
 }
 void Game::render()
 {
-	window->clear();
+	window->clear(sf::Color::Green);
 
-	std::cout << "+";
 
 	window->display();
-	//std::cout << "rendering" << std::endl;
+	std::cout << "rendering" << std::endl;
 }

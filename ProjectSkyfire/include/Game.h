@@ -67,16 +67,14 @@ private:
 	sf::Vector2i defaultResolution = medRes;
 
 	sf::Clock FPS_clock;
-	/*double FPS_previous = 0;
-	double FPS_lag = 0.0;*/
-	/*double FPS_current = 0;
-	double FPS_elapsed = 0;*/
-	double const MS_PER_UPDATE = 1000.0 / 60.0;
-
+	int const FPS_target = 60;
+	sf::Int32 const MS_PER_UPDATE = 1000 / FPS_target; ///Like FPS, but reversed. How many ms in a frame if you want 60fps
 
 	Entity testEntity;
 	bool playMusic = false;
 	bool playSound = false;
+
+
 	////////////////////////////////////////////////////////////
 	/// Member functions
 	////////////////////////////////////////////////////////////
