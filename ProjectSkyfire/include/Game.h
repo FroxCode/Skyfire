@@ -25,7 +25,7 @@
 #include "components/BoxColliderComponent.h"
 #include "components/CircleColliderComponent.h"
 #include "components/GravityComponent.h"
-#include "components/ParticleComponent.h"
+#include "components/ParticlePoolComponent.h"
 #include "components/PlayerComponent.h"
 #include "components/SoundComponent.h"
 #include "components/MusicComponent.h"
@@ -68,12 +68,7 @@ private:
 
 	sf::Clock FPS_clock;
 	int const FPS_target = 60;
-	sf::Int32 const MS_PER_UPDATE = 1000 / FPS_target; ///Like FPS, but reversed. How many ms in a frame if you want 60fps
-
-	Entity testEntity;
-	bool playMusic = false;
-	bool playSound = false;
-
+	sf::Int32 const MS_PER_UPDATE = 1000 / FPS_target; ///Like FPS, but reversed. How many ms per frame if you want 60fps as target
 
 	////////////////////////////////////////////////////////////
 	/// Member functions
