@@ -28,8 +28,8 @@ bool CollisionSystem::checkCollision(sf::Vector2f &point, sf::FloatRect &box)
 bool CollisionSystem::checkCollision(sf::Vector2f &point, sf::IntRect &box)
 {
 	sf::Vector2i intVect;
-	intVect.x = point.x;
-	intVect.y = point.y;
+	intVect.x = (int)point.x;
+	intVect.y = (int)point.y;
 	return box.contains(intVect);
 }
 bool CollisionSystem::checkCollision(sf::IntRect &a, sf::IntRect &b)
@@ -86,5 +86,5 @@ float CollisionSystem::getVerticalIntersectionDepth(sf::FloatRect &a, sf::FloatR
 }
 sf::FloatRect CollisionSystem::asFloatRect(sf::IntRect &rect)
 {
-	return sf::FloatRect(rect.left, rect.top, rect.width, rect.height);
+	return sf::FloatRect((float)rect.left, (float)rect.top, (float)rect.width, (float)rect.height);
 }

@@ -22,8 +22,7 @@ Game::~Game()
 ///Game loop
 void Game::run()
 {
-	initialize();
-	
+	initialize();	
 	sf::Event event;
 	FPS_clock.restart();
 	sf::Int32 FPS_previous = FPS_clock.getElapsedTime().asMilliseconds();
@@ -64,25 +63,25 @@ void Game::run()
 }
 void Game::initialize()
 {
-	
 	std::cout << "initializing" << std::endl;
+	boi.addComponent(new ParticlePoolComponent());
+	pSys.addEntity(&boi);
 }
 void Game::update()
 {
-
 	std::cout << "updating" << std::endl;
 }
 void Game::fixedUpdate(sf::Event e)
 {
-
-	std::cout << "updating (fixed)" << std::endl;
+	///std::cout << "updating (fixed)" << std::endl;
+	pSys.fuelRandom(10);
+	pSys.update();
 }
 void Game::render()
 {
+	///std::cout << "rendering" << std::endl;
 	//TODO: update physics before rendering at % towards next fixed update
-	window->clear(sf::Color::Green);
-
-
+	window->clear(sf::Color::Black);
+	pSys.render(window);
 	window->display();
-	std::cout << "rendering" << std::endl;
 }
