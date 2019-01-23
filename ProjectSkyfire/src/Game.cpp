@@ -51,10 +51,10 @@ void Game::run()
 				}
 			}
 		}
-
 		while(FPS_lag >= MS_PER_UPDATE)
 		{
 			fixedUpdate(event);
+			
 			FPS_lag -= MS_PER_UPDATE;
 		}
 		render(); //here lag could be passed to advance physics just before rendering (normalized: lag/ms per update)
@@ -63,25 +63,23 @@ void Game::run()
 }
 void Game::initialize()
 {
-	std::cout << "initializing" << std::endl;
-	boi.addComponent(new ParticlePoolComponent());
-	pSys.addEntity(&boi);
+	///std::cout << "initializing" << std::endl;
 }
 void Game::update()
 {
-	std::cout << "updating" << std::endl;
+	///std::cout << "updating" << std::endl;
 }
 void Game::fixedUpdate(sf::Event e)
 {
 	///std::cout << "updating (fixed)" << std::endl;
-	pSys.fuelRandom(10);
-	pSys.update();
 }
 void Game::render()
 {
 	///std::cout << "rendering" << std::endl;
 	//TODO: update physics before rendering at % towards next fixed update
 	window->clear(sf::Color::Black);
-	pSys.render(window);
+
+	///Draw in here
+
 	window->display();
 }

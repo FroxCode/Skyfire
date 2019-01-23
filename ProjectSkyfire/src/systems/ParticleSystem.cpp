@@ -43,9 +43,26 @@ void ParticleSystem::render(std::shared_ptr<sf::RenderWindow> w)
 void ParticleSystem::fuel(int amount, sf::Vector2f position, sf::Vector2f velocity, double radius, sf::Color color)
 {
 	checkAmount(&amount);
-	for (int i = 0; i < amount; i++)
+	if (amount > 0)
 	{
-		//...
+		for (std::vector<Entity*>::iterator i = m_entities.begin(), e = m_entities.end(); i != e; i++)
+		{
+			for (int j = 0; j < (*i)->getComponents().size(); j++)
+			{
+				if ((*i)->getComponents().at(j)->getName() == "ParticlePoolComponent")
+				{
+					for (int k = 0; k < ParticlePoolComponent::MAX_PARTICLES; k++)
+					{
+						if (!static_cast<ParticlePoolComponent*>((*i)->getComponents().at(j))->m_pool[k].inUse() && amount > 0)
+						{
+							static_cast<ParticlePoolComponent*>((*i)->getComponents().at(j))->m_pool[k].init(position, velocity, radius, color);
+							amount--;
+						}
+					}
+					break;
+				}
+			}
+		}
 	}
 }
 void ParticleSystem::fuelRandom(int amount)
@@ -67,8 +84,7 @@ void ParticleSystem::fuelRandom(int amount)
 								sf::Vector2f(randomize(1280), randomize(720)),
 								sf::Vector2f(randomize(200, -100), randomize(200, 10)),
 								(float)randomize(10, 1),
-								sf::Color(255, 255, 255, (sf::Uint8)randomize(100, 10)));
-								//sf::Color((sf::Uint8)randomize(255), (sf::Uint8)randomize(255), (sf::Uint8)randomize(255), (sf::Uint8)randomize(255)));
+								sf::Color((sf::Uint8)randomize(255), (sf::Uint8)randomize(255), (sf::Uint8)randomize(255), (sf::Uint8)randomize(255)));
 							amount--;
 						}
 					}
@@ -80,8 +96,7 @@ void ParticleSystem::fuelRandom(int amount)
 }
 float ParticleSystem::randomize(int max, int min) 
 {
-	///return max > min ? rand() % max + min : 0;
-	return (float)(rand() % max + min);
+	return (float)( min == 0 ? rand() % max : rand() % (max-min) + min); //false condition may have better 
 }	
 void ParticleSystem::checkAmount(int *amount)
 {
