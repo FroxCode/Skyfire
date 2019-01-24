@@ -21,8 +21,8 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	PlayerComponent(std::string name) : Component("PlayerComponent"),
-		m_name(name) { }
+	PlayerComponent(std::string playerName) : Component("PlayerComponent"),
+		m_playerName(playerName) { }
 
 	////////////////////////////////////////////////////////////
 	/// Destructor (for overriding virtual function in abstract 
@@ -33,14 +33,14 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Getters/Setters
 	////////////////////////////////////////////////////////////
-	std::string getName() { return m_name; }
-	void setName(std::string name) { m_name = name; }
+	std::string getPlayerName() { return m_playerName; }
+	void setPlayerName(std::string playerName) { m_playerName = playerName; }
 
 private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables
 	////////////////////////////////////////////////////////////
-	std::string m_name;
+	std::string m_playerName;
 	/* 
 	// Anything could go here, depending on the game.
 	// Score, lives, player specific data

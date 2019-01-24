@@ -155,7 +155,7 @@
     <ClInclude Include="include\components\Component.h" />
     <ClInclude Include="include\components\GravityComponent.h" />
     <ClInclude Include="include\components\MusicComponent.h" />
-    <ClInclude Include="include\components\ParticleComponent.h" />
+    <ClInclude Include="include\components\ParticlePoolComponent.h" />
     <ClInclude Include="include\components\PlayerComponent.h" />
     <ClInclude Include="include\components\SoundComponent.h" />
     <ClInclude Include="include\components\SpriteComponent.h" />

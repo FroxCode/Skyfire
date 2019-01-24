@@ -74,9 +74,6 @@
     <ClInclude Include="include\components\GravityComponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
-    <ClInclude Include="include\components\ParticleComponent.h">
-      <Filter>Header Files\components</Filter>
-    </ClInclude>
     <ClInclude Include="include\components\PlayerComponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
@@ -132,6 +129,9 @@
       <Filter>Header Files\systems</Filter>
     </ClInclude>
     <ClInclude Include="include\components\MusicComponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\components\ParticlePoolComponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
   </ItemGroup>

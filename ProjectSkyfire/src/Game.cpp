@@ -22,11 +22,10 @@ Game::~Game()
 ///Game loop
 void Game::run()
 {
-	initialize();
-	
+	initialize();	
 	sf::Event event;
-	sf::Int32 FPS_previous = FPS_clock.getElapsedTime().asMilliseconds();
 	FPS_clock.restart();
+	sf::Int32 FPS_previous = FPS_clock.getElapsedTime().asMilliseconds();
 	sf::Int32 FPS_lag = 0;
 	while (isRunning)
 	{
@@ -52,36 +51,35 @@ void Game::run()
 				}
 			}
 		}
-
 		while(FPS_lag >= MS_PER_UPDATE)
 		{
 			fixedUpdate(event);
+			
 			FPS_lag -= MS_PER_UPDATE;
 		}
-		render();
+		render(); //here lag could be passed to advance physics just before rendering (normalized: lag/ms per update)
 	}
 	std::cout << "Closing...";
 }
 void Game::initialize()
 {
-	
-	std::cout << "initializing" << std::endl;
+	///std::cout << "initializing" << std::endl;
 }
 void Game::update()
 {
-
-	std::cout << "updating" << std::endl;
+	///std::cout << "updating" << std::endl;
 }
 void Game::fixedUpdate(sf::Event e)
 {
-
-	std::cout << "updating (fixed)" << std::endl;
+	///std::cout << "updating (fixed)" << std::endl;
 }
 void Game::render()
 {
-	window->clear(sf::Color::Green);
+	///std::cout << "rendering" << std::endl;
+	//TODO: update physics before rendering at % towards next fixed update
+	window->clear(sf::Color::Black);
 
+	///Draw in here
 
 	window->display();
-	std::cout << "rendering" << std::endl;
 }

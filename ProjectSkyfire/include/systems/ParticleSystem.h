@@ -16,11 +16,20 @@
 
 ///Frox
 #include "System.h"
+#include "components/ParticlePoolComponent.h"
 
 class ParticleSystem : public System
 {
 public:
-	void update(sf::Event e);
+
+	ParticleSystem() : System() {}
+	~ParticleSystem() {}
+	void update();
+	void fuel(int amount, sf::Vector2f position, sf::Vector2f velocity, double radius, sf::Color color);
+	void fuelRandom(int amount);
+	void checkAmount(int* amount);
+	void render(std::shared_ptr<sf::RenderWindow> w);
+	float randomize(int max, int min = 0);
 
 };
 #endif;

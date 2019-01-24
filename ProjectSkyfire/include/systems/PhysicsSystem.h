@@ -16,11 +16,14 @@
 
 ///Frox
 #include "System.h"
+#include "components/TransformComponent.h"
+#include "components/GravityComponent.h"
+#include "components/VelocityComponent.h"
 
 class PhysicsSystem : public System
 {
 public:
-	void update(sf::Event e);
+	void update();
 
 };
 #endif;

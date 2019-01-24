@@ -16,11 +16,14 @@
 
 ///Frox
 #include "System.h"
+#include "components/SpriteComponent.h"
+#include "components/TransformComponent.h"
+
 
 class RenderSystem : public System
 {
 public:
-	void update(sf::Event e);
+	void update(std::shared_ptr<sf::RenderWindow> w);
 
 };
 #endif;
