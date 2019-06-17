@@ -1,2 +1,2 @@
 # Skyfire
-A game framework by Dale Sinnott
+An ECS game framework by Dale Sinnott
